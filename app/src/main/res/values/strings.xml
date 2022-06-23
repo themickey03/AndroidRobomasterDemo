@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DemoRobomaster</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Robomaster Demo</string>
+    <string name="second_fragment_label">Управление роботом</string>
+    <string name="desc_fragment_label">Об устройстве</string>
+    <string name="doc_fragment_label">Документация</string>
+    <string name="bt_version_string">Запрос версии ПО робота</string>
+    <string name="bt_wheel_string">Тест движения</string>
+    <string name="bt_led_srting">Тест световой индикации</string>
+    <string name="description_holder">Тут когда то будет описание робота</string>
+    <string name="documentation_holder">Тут должна быть документация</string>
+    <string name="long_text_desc"><![CDATA[
+    <p style="text-align: justify;"><strong>DJI Robomaster </strong>&ndash; инновационное образовательное решение для обучения школьников целому ряду дисциплин: конструированию, программированию, управлению беспилотным транспортом.</p>
+<p style="text-align: justify;">Решение может использоваться как на уроках технологии и информатики, так и в дополнительном образовании.</p>
+<p style="text-align: justify;">Робот оснащен колесами Илона, что позволяет ему двигаться в любом направлении со сверхбыстрым откликом, а установленная камера с широким углом обзора (1200) поможет эффективно изучить машинное зрение. </p>
+<p style="text-align: justify;"><strong>RoboMaster EP</strong> является непревзойденным образовательным решением для школьника и учителя.</p>
+<h3>Инновационные инструменты обучения:</h3>
+<ul>
+<li>
+<p>Официальный SDK</p>
+</li>
+<li>
+<p>Широкий функционал и возможности совместимости</p>
+</li>
+<li>Высокопроизводительные механические аксессуары</li>
+</ul>
+<h3>Международные соревнования</h3>
+<ul>
+<li>
+<p><span>Турнир RoboMaster для школьников</span></p>
+</li>
+<li>
+<p><span>Многораундовая система соревнований</span></p>
+</li>
+<li><span>Партнерство с лучшими школами и ВУЗами</span></li>
+</ul>
+<h3>Учебные ресурсы:</h3>
+<ul>
+<li>
+<p><span>Решения для проектной деятельности</span></p>
+</li>
+<li>
+<p><span>Поэтапная модель обучения</span></p>
+</li>
+<li><span>Широкий спектр учебно-методических материалов</span></li>
+</ul>
+]]>
+    </string>
+</resources>
+
+
