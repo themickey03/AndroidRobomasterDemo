@@ -1,7 +1,6 @@
 package com.mickey.demorobomaster;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +22,7 @@ public class SecondFragment extends Fragment {
 
     @Override
     public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
+            @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
@@ -34,79 +33,58 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
         if (! Python.isStarted()) {
-            Python.start(new AndroidPlatform(this.getActivity()));
+            Python.start(new AndroidPlatform(this.requireActivity()));
         }
         Python py = Python.getInstance();
         PyObject pyobj = py.getModule("main");
 
-        Button bt_version = (Button) getView().findViewById(R.id.bt_version);
+        Button bt_version = (Button) requireView().findViewById(R.id.bt_version);
 
-        bt_version.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PyObject obj = pyobj.callAttr("check_version");
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
-                builder1.setMessage("Result: " + obj.toString());
-                builder1.setCancelable(true);
+        bt_version.setOnClickListener(view1 -> {
+            PyObject obj = pyobj.callAttr("check_version");
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
+            builder1.setMessage("Result: " + obj.toString());
+            builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+            builder1.setPositiveButton(
+                    "Ok",
+                    (dialog, id) -> dialog.cancel());
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         });
 
-        Button bt_wheel = (Button) getView().findViewById(R.id.bt_wheel);
+        Button bt_wheel = (Button) requireView().findViewById(R.id.bt_wheel);
 
-        bt_wheel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PyObject obj = pyobj.callAttr("test_wheel");
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
-                builder1.setMessage("Result: " + obj.toString());
-                builder1.setCancelable(true);
+        bt_wheel.setOnClickListener(view13 -> {
+            PyObject obj = pyobj.callAttr("test_wheel");
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
+            builder1.setMessage("Result: " + obj.toString());
+            builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+            builder1.setPositiveButton(
+                    "Ok",
+                    (dialog, id) -> dialog.cancel());
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         });
 
 
-        Button bt_led = (Button) getView().findViewById(R.id.bt_led);
+        Button bt_led = (Button) requireView().findViewById(R.id.bt_led);
 
-        bt_led.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PyObject obj = pyobj.callAttr("test_led");
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
-                builder1.setMessage("Result: " + obj.toString());
-                builder1.setCancelable(true);
+        bt_led.setOnClickListener(view12 -> {
+            PyObject obj = pyobj.callAttr("test_led");
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(SecondFragment.this.getActivity());
+            builder1.setMessage("Result: " + obj.toString());
+            builder1.setCancelable(true);
 
-                builder1.setPositiveButton(
-                        "Ok",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+            builder1.setPositiveButton(
+                    "Ok",
+                    (dialog, id) -> dialog.cancel());
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         });
 
 
